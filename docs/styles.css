@@ -1052,6 +1052,8 @@ code {
   .strip__actions { width: 100%; }
   .strip__actions .btn { flex: 1; }
   .code pre { white-space: pre-wrap; word-break: break-word; font-size: .7rem; }
+  .hero__meta { gap: .2rem .95rem; }
+  .hero__meta .sep { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
