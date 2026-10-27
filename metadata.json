@@ -1,0 +1,6 @@
+{
+  "name": "CantaPagos",
+  "description": "Altavoz inteligente de cobros offline para tenderos colombianos que canta en voz alta los pagos de Nequi, Daviplata y Bancolombia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CantaPagos — el celular que canta tus pagos | Nequi, Daviplata y Bancolombia</title>
+<meta name="description" content="CantaPagos convierte tu celular Android en un altavoz de cobros: anuncia en voz alta los pagos de Nequi, Daviplata y Bancolombia. 100% offline, sin internet y sin mensualidad.">
+<meta name="theme-color" content="#070B14">
+<link rel="canonical" href="https://macorreag.github.io/CantaPagos/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:title" content="CantaPagos — el celular que canta tus pagos">
+<meta property="og:description" content="Anuncia en voz alta los pagos de Nequi, Daviplata y Bancolombia. 100% offline, sin internet y sin mensualidad.">
+<meta property="og:url" content="https://macorreag.github.io/CantaPagos/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CantaPagos",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Android 7.0+",
+  "description": "Altavoz de cobros offline que canta en voz alta los pagos de Nequi, Daviplata y Bancolombia.",
+  "url": "https://macorreag.github.io/CantaPagos/",
+  "downloadUrl": "https://github.com/Macorreag/CantaPagos/releases/latest/download/CantaPagos.apk",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "COP" },
+  "softwareVersion": "1.0"
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top" aria-label="CantaPagos, inicio">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
+      </span>
+      <span class="brand__text">CantaPagos</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#funciones">Funciones</a>
+      <a href="#privacidad">Privacidad</a>
+      <a href="#instalar">Instalar</a>
+      <a href="#faq">Dudas</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm" href="#descargar">Descargar APK</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="dot"></span> Altavoz de cobros para tenderos</p>
+
+        <h1>Tu celular canta los pagos.<br><span class="grad">Tú sigues atendiendo.</span></h1>
+
+        <p class="lead">
+          CantaPagos escucha las notificaciones de <strong>Nequi</strong>, <strong>Daviplata</strong>
+          y <strong>Bancolombia</strong> y anuncia el valor en voz alta, al instante.
+          Sin internet, sin mensualidad y sin soltar el mostrador.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="https://github.com/Macorreag/CantaPagos/releases/latest/download/CantaPagos.apk">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar APK
+          </a>
+          <button class="btn btn--ghost btn--lg" id="demo" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
+            <span id="demo-label">Escuchar cómo canta</span>
+          </button>
+        </div>
+
+        <p class="hero__meta">
+          <span>v1.0</span><span class="sep"></span><span>Android 7+</span><span class="sep"></span><span>APK firmado</span><span class="sep"></span><span>0 permisos de internet</span>
+        </p>
+
+        <ul class="wallets" aria-label="Billeteras compatibles">
+          <li><span class="wallets__dot" style="--c:#7A1CAC"></span>Nequi</li>
+          <li><span class="wallets__dot" style="--c:#DC2626"></span>Daviplata</li>
+          <li><span class="wallets__dot" style="--c:#D97706"></span>Bancolombia</li>
+          <li><span class="wallets__dot" style="--c:#0284C7"></span>SMS bancario</li>
+        </ul>
+      </div>
+
+      <!-- Mockup fiel de la app -->
+      <div class="hero__device">
+        <div class="phone" role="img" aria-label="Pantalla de CantaPagos mostrando el cuadre del día en $45.000 y tres pagos cantados">
+          <div class="phone__bezel">
+            <div class="phone__screen">
+              <div class="statusbar">
+                <span>4:50</span>
+                <span class="statusbar__icons" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 17h3v4H2zM7 13h3v8H7zM12 9h3v12h-3zM17 5h3v16h-3z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm6-6a9 9 0 0 0-12 0l1.5 1.5a7 7 0 0 1 9 0L18 14Zm3-3A13 13 0 0 0 3 11l1.5 1.5a11 11 0 0 1 15 0L21 11Z"/></svg>
+                  <span class="batt">82</span>
+                </span>
+              </div>
+
+              <div class="app-head">
+                <div>
+                  <div class="app-head__row">
+                    <span class="app-head__name">CantaPagos</span>
+                    <span class="pill-offline">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m2 2 20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 12.5a10 10 0 0 1 4-2.4"/><path d="M15 10.1a10 10 0 0 1 4 2.4"/><path d="M12 20h.01"/></svg>
+                      100% offline
+                    </span>
+                  </div>
+                  <div class="app-head__sub">Escuchando pagos en tiempo real</div>
+                </div>
+                <div class="switch" aria-hidden="true"><span></span></div>
+              </div>
+
+              <div class="card summary">
+                <div class="summary__top">
+                  <span class="summary__label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v12H4z"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="M9 10h6"/></svg>
+                    Cuadre de caja (hoy)
+                  </span>
+                  <span class="summary__count">3 pagos</span>
+                </div>
+                <div class="summary__total">$ 45.000</div>
+                <div class="summary__chips">
+                  <span class="chip chip--nequi">Nequi · $ 25.000</span>
+                  <span class="chip chip--davi">Daviplata · $ 10.000</span>
+                  <span class="chip chip--banco">Bancolombia · $ 10.000</span>
+                </div>
+              </div>
+
+              <div class="app-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+                Probar sonido ($10.000)
+              </div>
+
+              <div class="app-tools" aria-hidden="true">
+                <span>Ajustes</span><span>Simular</span><span>Cerrar</span><span>Batería</span>
+              </div>
+
+              <div class="app-section">
+                <span>Pagos cantados en vivo</span>
+                <span class="app-section__badge">3 en este turno</span>
+              </div>
+
+              <div class="txn">
+                <div class="txn__top">
+                  <span class="chip chip--nequi">Nequi</span>
+                  <span class="txn__time">04:48:12 p.m.</span>
+                </div>
+                <div class="txn__bottom">
+                  <span class="txn__amount">$ 25.000</span>
+                  <span class="txn__ok">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    Cantado
+                  </span>
+                </div>
+              </div>
+
+              <div class="txn">
+                <div class="txn__top">
+                  <span class="chip chip--davi">Daviplata</span>
+                  <span class="txn__time">04:31:05 p.m.</span>
+                </div>
+                <div class="txn__bottom">
+                  <span class="txn__amount">$ 10.000</span>
+                  <span class="txn__ok">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    Cantado
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float float--a" aria-hidden="true">
+          <span class="float__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+          </span>
+          <span>Lee la notificación<br><b>real, no una foto</b></span>
+        </div>
+
+        <div class="float float--b" aria-hidden="true">
+          <span class="float__icon float__icon--green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+          </span>
+          <span>Sin nube.<br><b>Todo en tu celular.</b></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEMA ============ -->
+  <section class="section section--problem" id="problema">
+    <div class="wrap">
+      <div class="problem">
+        <div class="problem__copy reveal">
+          <p class="eyebrow">El problema</p>
+          <h2>El pantallazo falso.<br>El robo más fácil del mostrador.</h2>
+          <p class="lead">
+            Un cliente te muestra un comprobante en el celular. Estás atendiendo, cobrando, empacando.
+            La imagen parece la de siempre, pero es una app clonada o una captura editada.
+            Cuando volteas a mirar tu saldo, la plata nunca llegó.
+          </p>
+        </div>
+        <div class="problem__cards">
+          <article class="pcard reveal">
+            <span class="pcard__tag">Lo que ves</span>
+            <p>Una pantalla que dice “Nequi te envió $25.000”.</p>
+          </article>
+          <article class="pcard pcard--win reveal">
+            <span class="pcard__tag">Lo que escuchas</span>
+            <p class="pcard__sound"><span class="pcard__chime"></span>“¡Nequi! Recibiste veinticinco mil pesos.”</p>
+          </article>
+          <p class="problem__note reveal">
+            La diferencia es simple: el sonido solo se dispara cuando <strong>la notificación real</strong> entra al teléfono del negocio.
+            Nadie puede cantarte un pago que no existe.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO FUNCIONA ============ -->
+  <section class="section" id="como-funciona">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">Cómo funciona</p>
+        <h2>Tres pasos y el mostrador empieza a hablar</h2>
+      </div>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__num">01</span>
+          <h3>Instala y da acceso a notificaciones</h3>
+          <p>Es un permiso del sistema Android, el mismo que usan los relojes y los lectores de pantalla. La app no pide internet, ni cuenta, ni cámara.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">02</span>
+          <h3>Deja el celular en el mostrador</h3>
+          <p>Sube el volumen de multimedia y activa el lector. CantaPagos ignora la publicidad y solo reacciona a abonos de billeteras y SMS bancarios.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">03</span>
+          <h3>Suena la campanita y la voz canta</h3>
+          <p>Primero el “¡clin-ck!”, después el monto en voz alta. Y de una suma al cuadre del día con la billetera que corresponda.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FUNCIONES ============ -->
+  <section class="section section--features" id="funciones">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">Funciones</p>
+        <h2>Hecha para el que no puede soltar el mostrador</h2>
+      </div>
+
+      <div class="features">
+        <article class="feature reveal">
+          <span class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
+          </span>
+          <h3>El monto, en voz alta</h3>
+          <p>Campanita de caja registradora generada en el teléfono y voz en español de Colombia: “veinticinco mil pesos”, no “$25.000.00”.</p>
+        </article>
+
+        <article class="feature reveal">
+          <span class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18"/><path d="M6 12h12"/><path d="M10 19h4"/></svg>
+          </span>
+          <h3>Filtro anti-publicidad</h3>
+          <p>Descarta préstamos, “preaprobado”, promociones y ofertas. Solo pasa lo que de verdad es un abono: “recibiste”, “te envió”, “transferencia exitosa”.</p>
+        </article>
+
+        <article class="feature reveal">
+          <span class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </span>
+          <h3>Cuadre del día</h3>
+          <p>Total recaudado del turno y desglose por billetera, para cerrar caja sin sumar en el aire ni confiar en la memoria.</p>
+        </article>
+
+        <article class="feature reveal">
+          <span class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h11"/><path d="M8 12h11"/><path d="M8 18h11"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
+          </span>
+          <h3>Historial del turno</h3>
+          <p>Hora, monto y billetera de cada pago cantado. Los nombres de tus clientes se anonimizan antes de guardarse.</p>
+        </article>
+
+        <article class="feature reveal">
+          <span class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3>100% offline de verdad</h3>
+          <p>El manifiesto de la app no incluye el permiso <code>INTERNET</code>. No hay servidor, no hay nube, no hay cuenta que crear.</p>
+        </article>
+
+        <article class="feature reveal">
+          <span class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/><circle cx="12" cy="12" r="4"/></svg>
+          </span>
+          <h3>Simulador y prueba de sonido</h3>
+          <p>Antes de abrir, verificas que el altavoz suene. Y puedes simular pagos para probar el volumen sin esperar a un cliente real.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRIVACIDAD ============ -->
+  <section class="section section--privacy" id="privacidad">
+    <div class="wrap privacy">
+      <div class="privacy__copy reveal">
+        <p class="eyebrow">Privacidad</p>
+        <h2>Ni internet, ni nube, ni los datos de tus clientes</h2>
+        <p class="lead">
+          No es una promesa de marketing: es una línea que no está en el código.
+          El manifiesto de CantaPagos no declara el permiso de internet, así que el sistema
+          operativo le impide abrir cualquier conexión.
+        </p>
+        <ul class="checks">
+          <li>Los pagos viven en una base de datos local en tu teléfono (Room).</li>
+          <li>La voz se sintetiza en el dispositivo, sin enviar texto a ningún servidor.</li>
+          <li>Los nombres que aparecen en las notificaciones se reemplazan antes de guardar.</li>
+          <li>El código es abierto: puedes leer exactamente qué hace.</li>
+        </ul>
+        <a class="link-arrow" href="https://github.com/Macorreag/CantaPagos/blob/main/app/src/main/AndroidManifest.xml">
+          Ver el AndroidManifest.xml
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="privacy__proof reveal">
+        <div class="code">
+          <div class="code__bar">
+            <span>AndroidManifest.xml</span>
+            <span class="code__ok">sin INTERNET</span>
+          </div>
+          <pre><code><span class="c">&lt;!-- Cero permiso de internet: app 100% offline --&gt;</span>
+&lt;uses-permission android:name=<span class="s">"android.permission.VIBRATE"</span> /&gt;
+&lt;uses-permission android:name=<span class="s">"android.permission.POST_NOTIFICATIONS"</span> /&gt;
+&lt;uses-permission android:name=<span class="s">"android.permission.MODIFY_AUDIO_SETTINGS"</span> /&gt;
+&lt;uses-permission android:name=<span class="s">"android.permission.RECEIVE_BOOT_COMPLETED"</span> /&gt;
+
+<span class="c">&lt;!-- y nada más. Ni una sola conexión de red. --&gt;</span></code></pre>
+        </div>
+        <div class="proof__stat">
+          <span class="proof__num">0</span>
+          <span class="proof__txt">permisos de red en toda la app</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INSTALAR ============ -->
+  <section class="section" id="instalar">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">Instalación</p>
+        <h2>Se instala como cualquier APK. Sin tienda, sin cuenta.</h2>
+      </div>
+
+      <div class="install">
+        <ol class="install__steps">
+          <li class="reveal">
+            <span class="install__n">1</span>
+            <div>
+              <h3>Descarga el APK</h3>
+              <p>Desde GitHub Releases. Es el archivo <code>CantaPagos.apk</code> firmado y generado automáticamente en cada cambio.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="install__n">2</span>
+            <div>
+              <h3>Permite instalar apps desconocidas</h3>
+              <p>Android te va a preguntar una vez. Es porque el APK no viene de Play Store, no porque la app sea riesgosa.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="install__n">3</span>
+            <div>
+              <h3>Abre la app y activa el acceso a notificaciones</h3>
+              <p>Botón “Habilitar en Ajustes”. Busca CantaPagos en la lista y enciéndelo. Vuelve a la app: el aviso amarillo desaparece.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="install__n">4</span>
+            <div>
+              <h3>Prueba el sonido y sube el volumen</h3>
+              <p>Dale a “Probar sonido ($10.000)”. Si lo escuchas en todo el local, ya está listo para cantar pagos.</p>
+            </div>
+          </li>
+        </ol>
+
+        <aside class="install__note reveal">
+          <span class="install__note-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          </span>
+          <h3>Si deja de sonar en la noche</h3>
+          <p>
+            Marcas como Xiaomi, Samsung y Motorola apagan los servicios en segundo plano.
+            En la app hay una guía de batería: activa el inicio automático y quita la restricción de batería para CantaPagos.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CI STRIP ============ -->
+  <section class="strip">
+    <div class="wrap strip__inner reveal">
+      <div>
+        <p class="strip__title">Construido en público, compilado por robots</p>
+        <p class="strip__sub">Cada push a <code>main</code> compila y firma un APK nuevo en GitHub Actions, y lo publica en Releases.</p>
+      </div>
+      <div class="strip__actions">
+        <a class="btn btn--ghost btn--sm" href="https://github.com/Macorreag/CantaPagos/actions/workflows/apk.yml">
+          <img class="badge" src="https://github.com/Macorreag/CantaPagos/actions/workflows/apk.yml/badge.svg" alt="Estado del build de APK" height="20" width="auto">
+        </a>
+        <a class="btn btn--ghost btn--sm" href="https://github.com/Macorreag/CantaPagos">Ver el código</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">Dudas</p>
+        <h2>Lo que todos preguntan antes de instalarla</h2>
+      </div>
+
+      <div class="faq">
+        <details class="reveal">
+          <summary>¿Necesita internet?</summary>
+          <p>No. La app no tiene el permiso <code>INTERNET</code> en su manifiesto, así que ni siquiera podría conectarse. Funciona en modo avión.</p>
+        </details>
+        <details class="reveal">
+          <summary>¿Con qué billeteras funciona?</summary>
+          <p>Nequi, Daviplata, Bancolombia (incluida A la mano) y notificaciones de SMS bancarios. Cada pago se marca con su billetera en el historial.</p>
+        </details>
+        <details class="reveal">
+          <summary>¿Guarda los datos de mis clientes?</summary>
+          <p>Guarda el monto, la hora y la billetera. Los nombres que aparecen en el texto de la notificación se anonimizan antes de almacenarse, y todo queda solo en tu teléfono.</p>
+        </details>
+        <details class="reveal">
+          <summary>¿Por qué no está en Play Store?</summary>
+          <p>Hoy se distribuye como APK firmado desde este repositorio. Publicar en Play implica un proceso de revisión aparte; mientras tanto, cada cambio en <code>main</code> genera un APK nuevo automáticamente.</p>
+        </details>
+        <details class="reveal">
+          <summary>¿Es gratis?</summary>
+          <p>Sí. El código es abierto y el APK es libre de descargar. No hay suscripción, no hay versión “premium” y no hay anuncios.</p>
+        </details>
+        <details class="reveal">
+          <summary>Instalé y no suena. ¿Qué reviso?</summary>
+          <p>En orden: acceso a notificaciones activo, volumen de multimedia alto, la app abierta al menos una vez después de instalar, y la restricción de batería desactivada. Si sigue igual, abre un issue en GitHub con el modelo del teléfono.</p>
+        </details>
+        <details class="reveal">
+          <summary>¿En qué Android funciona?</summary>
+          <p>Desde Android 7.0 (API 24) en adelante. Está probada en capas como One UI y HyperOS, que son las que más agresivamente cierran apps en segundo plano.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="cta-final" id="descargar">
+    <div class="wrap cta-final__inner reveal">
+      <h2>Ponlo a cantar en tu mostrador</h2>
+      <p class="lead">Descarga el APK, dale acceso a notificaciones y haz una venta de prueba. Son dos minutos.</p>
+      <div class="cta-final__actions">
+        <a class="btn btn--primary btn--lg" href="https://github.com/Macorreag/CantaPagos/releases/latest/download/CantaPagos.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Descargar CantaPagos.apk
+        </a>
+        <a class="btn btn--ghost btn--lg" href="https://github.com/Macorreag/CantaPagos/releases">Ver todas las versiones</a>
+      </div>
+      <p class="cta-final__fine">Si el enlace falla, entra a Releases y descarga el APK más reciente.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
+      </span>
+      <div>
+        <p class="footer__name">CantaPagos</p>
+        <p class="footer__tag">Hecho en Colombia para el que atiende el mostrador.</p>
+      </div>
+    </div>
+
+    <nav class="footer__links" aria-label="Enlaces del proyecto">
+      <a href="https://github.com/Macorreag/CantaPagos">Repositorio</a>
+      <a href="https://github.com/Macorreag/CantaPagos/releases">Releases</a>
+      <a href="https://github.com/Macorreag/CantaPagos/issues">Reportar un fallo</a>
+      <a href="#privacidad">Privacidad</a>
+    </nav>
+  </div>
+  <div class="wrap footer__legal">
+    <p>© <span id="year">2026</span> Miller Correa. CantaPagos es un proyecto independiente y no está afiliado a Nequi, Daviplata ni Bancolombia. Las marcas pertenecen a sus dueños.</p>
+    <p>El APK se compila y firma automáticamente con GitHub Actions.</p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

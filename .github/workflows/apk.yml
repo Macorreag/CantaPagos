@@ -1,0 +1,164 @@
+name: APK
+
+# Compila, firma y publica el APK en cada cambio de la app.
+# No toca el código: la firma entra por variables de entorno que
+# app/build.gradle.kts ya sabe leer (KEYSTORE_PATH, STORE_PASSWORD, KEY_PASSWORD).
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apk-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GRADLE_VERSION: '9.3.1'
+  ASSET_NAME: CantaPagos.apk
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Gradle ${{ env.GRADLE_VERSION }}
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: ${{ env.GRADLE_VERSION }}
+          cache-read-only: false
+
+      - name: Android SDK 36.1
+        run: |
+          set -euo pipefail
+          SDK_ROOT="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          SDKM="$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+          [ -x "$SDKM" ] || SDKM="$(command -v sdkmanager)"
+          echo "sdkmanager: $SDKM"
+          yes | "$SDKM" --licenses >/dev/null 2>&1 || true
+          "$SDKM" --install "platform-tools" "platforms;android-36.1" "build-tools;36.1.0" | tail -5
+
+      - name: Restaurar keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          set -euo pipefail
+          if [ -z "${KEYSTORE_BASE64:-}" ]; then
+            echo "::error::Falta el secret KEYSTORE_BASE64 (keystore en base64)."
+            exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/signing"
+          printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/signing/upload.jks"
+          test -s "$RUNNER_TEMP/signing/upload.jks"
+          echo "Keystore restaurado ($(stat -c%s "$RUNNER_TEMP/signing/upload.jks") bytes)."
+
+      - name: Compilar APK release
+        env:
+          KEYSTORE_PATH: ${{ runner.temp }}/signing/upload.jks
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          gradle :app:assembleRelease \
+            --no-daemon \
+            --stacktrace \
+            -Dorg.gradle.parallel=true
+
+      - name: Verificar firma y empaquetar
+        id: apk
+        run: |
+          set -euo pipefail
+          SRC="app/build/outputs/apk/release/app-release.apk"
+          test -f "$SRC" || { echo "::error::No se generó $SRC"; find app/build/outputs -name '*.apk' || true; exit 1; }
+
+          mkdir -p dist
+          cp "$SRC" "dist/$ASSET_NAME"
+          sha256sum "dist/$ASSET_NAME" | tee dist/SHA256SUMS.txt
+
+          APKSIGNER="$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -1)"
+          if [ -n "$APKSIGNER" ]; then
+            "$APKSIGNER" verify --print-certs "dist/$ASSET_NAME" | tee dist/certificate.txt
+          fi
+
+          SIZE=$(du -h "dist/$ASSET_NAME" | cut -f1)
+          echo "size=$SIZE" >> "$GITHUB_OUTPUT"
+          echo "sha=$(sha256sum "dist/$ASSET_NAME" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+
+      - name: Subir artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cantapagos-apk
+          path: dist/
+          retention-days: 30
+
+      - name: Publicar release
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA_SHORT: ${{ github.sha }}
+          SIZE: ${{ steps.apk.outputs.size }}
+          SHA256: ${{ steps.apk.outputs.sha }}
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
+            TAG="$GITHUB_REF_NAME"
+            TITLE="CantaPagos $TAG"
+          else
+            TAG="v1.0"
+            TITLE="CantaPagos v1.0"
+          fi
+
+          NOTES=$(cat <<EOF
+          APK firmado, compilado automáticamente desde GitHub Actions.
+
+          - Commit: \`${SHA_SHORT}\`
+          - Tamaño: ${SIZE}
+          - SHA-256: \`${SHA256}\`
+          - Requiere Android 7.0 (API 24) o superior
+
+          Descarga directa: https://github.com/${{ github.repository }}/releases/latest/download/${ASSET_NAME}
+          EOF
+          )
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --notes "$NOTES" --title "$TITLE"
+          else
+            gh release create "$TAG" --title "$TITLE" --notes "$NOTES" --latest
+          fi
+
+          gh release upload "$TAG" "dist/$ASSET_NAME" dist/SHA256SUMS.txt --clobber
+          echo "Release publicado: $TAG"
+
+      - name: Resumen
+        run: |
+          {
+            echo "### APK listo"
+            echo
+            echo "| | |"
+            echo "|---|---|"
+            echo "| Archivo | \`$ASSET_NAME\` |"
+            echo "| Tamaño | ${{ steps.apk.outputs.size }} |"
+            echo "| SHA-256 | \`${{ steps.apk.outputs.sha }}\` |"
+          } >> "$GITHUB_STEP_SUMMARY"

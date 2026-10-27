@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">CantaPagos</string>
+    <string name="service_name">CantaPagos Lector de Cobros</string>
+    <string name="status_listening">Lector Activo</string>
+    <string name="status_paused">Lector en Pausa</string>
+    <string name="status_permission_needed">Permiso de Notificación Requerido</string>
+    <string name="permission_banner_title">Acceso a Notificaciones Necesario</string>
+    <string name="permission_banner_desc">Para que CantaPagos cante los pagos en voz alta, debes permitirle leer las notificaciones de Nequi, Daviplata y Bancolombia en los Ajustes del Sistema.</string>
+    <string name="grant_permission_btn">Habilitar en Ajustes</string>
+    <string name="daily_summary_title">Cuadre del Día</string>
+    <string name="today_total">Total Recaudado Hoy</string>
+    <string name="payments_count">%d pagos recibidos</string>
+    <string name="test_audio_btn">Probar Sonido ($10.000)</string>
+    <string name="close_shift_btn">Cerrar Caja</string>
+    <string name="close_shift_dialog_title">¿Cerrar Caja de Hoy?</string>
+    <string name="close_shift_dialog_desc">Se reiniciará el contador del turno a $0 para comenzar un nuevo día o turno de ventas. Los pagos anteriores se conservan en el registro.</string>
+    <string name="confirm">Confirmar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="recent_payments_title">Últimos Pagos Cantados</string>
+    <string name="no_payments_yet">Aún no se han recibido pagos en este turno.</string>
+    <string name="battery_tips_btn">Evitar Cierre en Segundo Plano</string>
+    <string name="battery_tips_title">Optimización de Batería</string>
+    <string name="battery_tips_desc">Marcas como Xiaomi (MIUI/HyperOS), Samsung y Motorola pueden apagar el lector si detectan inactividad. Activa el inicio automático y desactiva el ahorro de batería para CantaPagos.</string>
+    <string name="open_battery_settings">Ajustes de Batería</string>
+    <string name="simulate_payment_btn">Simulador de Pago</string>
+    <string name="wallet_nequi">Nequi</string>
+    <string name="wallet_daviplata">Daviplata</string>
+    <string name="wallet_bancolombia">Bancolombia</string>
+    <string name="wallet_sms">SMS Bancario</string>
+</resources>
