@@ -3,6 +3,10 @@ name: APK
 # Compila, firma y publica el APK en cada cambio de la app.
 # No toca el código: la firma entra por variables de entorno que
 # app/build.gradle.kts ya sabe leer (KEYSTORE_PATH, STORE_PASSWORD, KEY_PASSWORD).
+#
+# El SDK se instala a mano (platforms;android-36.1) porque app/build.gradle.kts usa
+# compileSdk { version = release(36) { minorApiLevel = 1 } } y el paquete 'tools' que
+# pedía android-actions/setup-android ya no existe en la imagen ubuntu-latest.
 
 on:
   push:
