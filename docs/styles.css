@@ -330,7 +330,7 @@ code {
   position: relative;
   display: grid;
   place-items: center;
-  padding-block: 1rem;
+  padding-block: 4.5rem;
 }
 
 .phone {
@@ -613,8 +613,8 @@ code {
 }
 .float__icon svg { width: 12px; height: 12px; }
 .float__icon--green { color: #6EE7B7; }
-.float--a { top: 17%; left: -15%; }
-.float--b { bottom: 18%; right: -11%; }
+.float--a { top: .25rem; left: 2%; }
+.float--b { bottom: .25rem; right: 2%; }
 
 /* ---------- Secciones ---------- */
 .section { position: relative; padding-block: clamp(4.5rem, 9vw, 7.5rem); }
@@ -1023,6 +1023,7 @@ code {
 /* ---------- Responsive ---------- */
 @media (max-width: 1180px) {
   .float { display: none; }
+  .hero__device { padding-block: 1rem; }
 }
 
 @media (max-width: 940px) {
