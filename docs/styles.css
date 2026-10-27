@@ -1028,6 +1028,7 @@ code {
 
 @media (max-width: 940px) {
   .nav__links { display: none; }
+  .nav__inner > .btn { margin-left: auto; }
   .hero__inner { grid-template-columns: 1fr; gap: 3rem; }
   .hero__copy { max-width: 40rem; }
   .hero__device { margin-top: .5rem; }
@@ -1050,6 +1051,7 @@ code {
   .cta-final__actions .btn { width: 100%; }
   .strip__actions { width: 100%; }
   .strip__actions .btn { flex: 1; }
+  .code pre { white-space: pre-wrap; word-break: break-word; font-size: .7rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
