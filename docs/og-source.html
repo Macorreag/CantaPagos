@@ -5,7 +5,7 @@
 <title>OG CantaPagos</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  html, body { width: 100%; height: 100%; overflow: hidden; }
   body {
     background: #070B14;
     color: #F8FAFC;
@@ -15,6 +15,7 @@
   .card {
     position: relative;
     width: 1200px; height: 630px;
+    transform-origin: 0 0;
     padding: 58px 64px;
     display: grid;
     grid-template-columns: 1fr 430px;
@@ -204,5 +205,14 @@
 
     <div class="url">macorreag.github.io/CantaPagos</div>
   </div>
+  <script>
+    // Escala la tarjeta para llenar cualquier viewport: a 1200x630 queda 1x,
+    // a 2400x1260 queda 2x con el texto rasterizado a esa resolución.
+    (function () {
+      var card = document.querySelector('.card');
+      var s = Math.min(window.innerWidth / 1200, window.innerHeight / 630);
+      card.style.transform = 'scale(' + s + ')';
+    })();
+  </script>
 </body>
 </html>
