@@ -5,7 +5,8 @@
 <title>Mock LinkedIn</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: 600px; background: #F4F2EE; }
+  html, body { width: 100%; background: #F4F2EE; }
+  .stage { width: 600px; transform-origin: 0 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #191919;
@@ -84,6 +85,7 @@
 </style>
 </head>
 <body>
+  <div class="stage">
   <div class="post">
     <div class="head">
       <div class="avatar">MC</div>
@@ -142,5 +144,10 @@
       </span>
     </div>
   </div>
+  </div>
+  <script>
+    var st = document.querySelector('.stage');
+    st.style.transform = 'scale(' + (window.innerWidth / 600) + ')';
+  </script>
 </body>
 </html>
