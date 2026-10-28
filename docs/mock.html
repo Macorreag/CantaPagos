@@ -6,7 +6,7 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 100%; background: #F4F2EE; }
-  .stage { width: 600px; transform-origin: 0 0; }
+  .stage { width: 600px; margin: 0 auto; zoom: 2; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #191919;
@@ -145,9 +145,5 @@
     </div>
   </div>
   </div>
-  <script>
-    var st = document.querySelector('.stage');
-    st.style.transform = 'scale(' + (window.innerWidth / 600) + ')';
-  </script>
 </body>
 </html>
