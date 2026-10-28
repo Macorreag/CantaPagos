@@ -325,6 +325,30 @@ code {
   box-shadow: 0 0 10px color-mix(in srgb, var(--c) 70%, transparent);
 }
 
+/* Sellos de confianza del hero */
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  list-style: none;
+  margin: 1.7rem 0 0;
+  padding: 0;
+}
+.trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .42rem .8rem .42rem .62rem;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, .32);
+  background: rgba(16, 185, 129, .08);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: #D1FAE5;
+}
+.trust svg { width: 14px; height: 14px; flex: none; color: var(--emerald); }
+
 /* ---------- Teléfono ---------- */
 .hero__device {
   position: relative;
@@ -744,6 +768,33 @@ code {
 .feature h3 { font-size: 1.05rem; margin-bottom: .45rem; letter-spacing: -.02em; }
 .feature p { font-size: .92rem; color: var(--muted); }
 
+/* ---------- Pilares de confianza ---------- */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+.pillar {
+  padding: 1.45rem 1.35rem 1.55rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(148, 163, 184, .06), rgba(148, 163, 184, .02));
+}
+.pillar__icon {
+  display: grid;
+  place-items: center;
+  width: 38px; height: 38px;
+  border-radius: 11px;
+  margin-bottom: 1rem;
+  color: var(--emerald);
+  background: rgba(16, 185, 129, .11);
+  border: 1px solid rgba(16, 185, 129, .26);
+}
+.pillar__icon svg { width: 19px; height: 19px; }
+.pillar h3 { font-size: 1.05rem; margin-bottom: .4rem; letter-spacing: -.02em; }
+.pillar p { font-size: .92rem; color: var(--muted); }
+
 /* ---------- Privacidad ---------- */
 .privacy {
   display: grid;
@@ -858,6 +909,35 @@ code {
   font-variant-numeric: tabular-nums;
 }
 .proof__txt { font-size: .86rem; color: var(--muted); }
+.proof__note {
+  font-size: .84rem;
+  line-height: 1.55;
+  color: var(--dim);
+}
+
+.callout {
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  margin: 1.6rem 0 1.2rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(16, 185, 129, .32);
+  background: rgba(16, 185, 129, .07);
+}
+.callout__icon {
+  display: grid;
+  place-items: center;
+  width: 32px; height: 32px;
+  flex: none;
+  border-radius: 9px;
+  color: var(--emerald);
+  background: rgba(16, 185, 129, .14);
+  border: 1px solid rgba(16, 185, 129, .3);
+}
+.callout__icon svg { width: 16px; height: 16px; }
+.callout h3 { font-size: .98rem; margin-bottom: .25rem; letter-spacing: -.015em; }
+.callout p { font-size: .9rem; color: var(--muted); }
 
 /* ---------- Instalar ---------- */
 .install {
@@ -1034,6 +1114,7 @@ code {
   .hero__device { margin-top: .5rem; }
   .phone { transform: none; }
   .problem, .privacy, .install { grid-template-columns: 1fr; }
+  .pillars { grid-template-columns: 1fr; }
   .features { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr; gap: 2rem; }
   .step { padding-top: 1.6rem; }
@@ -1054,6 +1135,7 @@ code {
   .code pre { white-space: pre-wrap; word-break: break-word; font-size: .7rem; }
   .hero__meta { gap: .2rem .95rem; }
   .hero__meta .sep { display: none; }
+  .trust li { font-size: .76rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

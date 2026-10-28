@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CantaPagos — el celular que canta tus pagos | Nequi, Daviplata y Bancolombia</title>
-<meta name="description" content="CantaPagos convierte tu celular Android en un altavoz de cobros: anuncia en voz alta los pagos de Nequi, Daviplata y Bancolombia. 100% offline, sin internet y sin mensualidad.">
+<meta name="description" content="CantaPagos convierte tu celular Android en un altavoz de cobros: anuncia en voz alta los pagos de Nequi, Daviplata y Bancolombia. Gratis, sin anuncios y sin permiso de internet.">
 <meta name="theme-color" content="#070B14">
 <link rel="canonical" href="https://macorreag.github.io/CantaPagos/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
 <meta property="og:title" content="CantaPagos — el celular que canta tus pagos">
-<meta property="og:description" content="Anuncia en voz alta los pagos de Nequi, Daviplata y Bancolombia. 100% offline, sin internet y sin mensualidad.">
+<meta property="og:description" content="Anuncia en voz alta los pagos de Nequi, Daviplata y Bancolombia. Gratis, sin anuncios y sin permiso de internet.">
 <meta property="og:url" content="https://macorreag.github.io/CantaPagos/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
@@ -72,7 +72,7 @@
         <p class="lead">
           CantaPagos escucha las notificaciones de <strong>Nequi</strong>, <strong>Daviplata</strong>
           y <strong>Bancolombia</strong> y anuncia el valor en voz alta, al instante.
-          Sin internet, sin mensualidad y sin soltar el mostrador.
+          Sin internet, sin anuncios y sin mensualidad.
         </p>
 
         <div class="hero__cta">
@@ -86,8 +86,23 @@
           </button>
         </div>
 
+        <ul class="trust" aria-label="Lo que CantaPagos no tiene">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 12 22l-2-2"/><path d="m2 2 20 20"/><path d="M8.5 2.5 12 2l8 8a3 3 0 0 1 0 4.2l-1.3 1.3"/><path d="m6.6 6.6-3 3a3 3 0 0 0 0 4.2L9 19.2"/></svg>
+            Gratis, sin suscripción
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg>
+            Sin anuncios
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 2 20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 12.5a10 10 0 0 1 4-2.4"/><path d="M15 10.1a10 10 0 0 1 4 2.4"/><path d="M12 20h.01"/></svg>
+            Sin permiso de internet
+          </li>
+        </ul>
+
         <p class="hero__meta">
-          <span>v1.0</span><span class="sep"></span><span>Android 7+</span><span class="sep"></span><span>APK firmado</span><span class="sep"></span><span>0 permisos de internet</span>
+          <span>v1.0</span><span class="sep"></span><span>Android 7+</span><span class="sep"></span><span>APK firmado</span>
         </p>
 
         <ul class="wallets" aria-label="Billeteras compatibles">
@@ -323,46 +338,97 @@
     </div>
   </section>
 
-  <!-- ============ PRIVACIDAD ============ -->
+  <!-- ============ PRIVACIDAD Y SEGURIDAD ============ -->
   <section class="section section--privacy" id="privacidad">
-    <div class="wrap privacy">
-      <div class="privacy__copy reveal">
-        <p class="eyebrow">Privacidad</p>
-        <h2>Ni internet, ni nube, ni los datos de tus clientes</h2>
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">Privacidad y seguridad</p>
+        <h2>Sin anuncios. Sin cobros.<br>Sin forma de conectarse.</h2>
         <p class="lead">
-          No es una promesa de marketing: es una línea que no está en el código.
-          El manifiesto de CantaPagos no declara el permiso de internet, así que el sistema
-          operativo le impide abrir cualquier conexión.
+          Tres cosas que CantaPagos no tiene, y que puedes verificar tú mismo en el código.
         </p>
-        <ul class="checks">
-          <li>Los pagos viven en una base de datos local en tu teléfono (Room).</li>
-          <li>La voz se sintetiza en el dispositivo, sin enviar texto a ningún servidor.</li>
-          <li>Los nombres que aparecen en las notificaciones se reemplazan antes de guardar.</li>
-          <li>El código es abierto: puedes leer exactamente qué hace.</li>
-        </ul>
-        <a class="link-arrow" href="https://github.com/Macorreag/CantaPagos/blob/main/app/src/main/AndroidManifest.xml">
-          Ver el AndroidManifest.xml
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-        </a>
       </div>
 
-      <div class="privacy__proof reveal">
-        <div class="code">
-          <div class="code__bar">
-            <span>AndroidManifest.xml</span>
-            <span class="code__ok">sin INTERNET</span>
+      <div class="pillars">
+        <article class="pillar reveal">
+          <span class="pillar__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg>
+          </span>
+          <h3>Ni un anuncio</h3>
+          <p>No hay banners, ni videos, ni SDK de publicidad. Nada se interpone entre el cliente y el mostrador, y nada te interrumpe el sonido.</p>
+        </article>
+
+        <article class="pillar reveal">
+          <span class="pillar__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+          </span>
+          <h3>Ni un peso</h3>
+          <p>Gratis y sin suscripción. No hay versión premium, ni prueba que vence, ni cobro escondido por el cuadre del día.</p>
+        </article>
+
+        <article class="pillar reveal">
+          <span class="pillar__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m2 2 20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 12.5a10 10 0 0 1 4-2.4"/><path d="M15 10.1a10 10 0 0 1 4 2.4"/><path d="M12 20h.01"/></svg>
+          </span>
+          <h3>Ni una conexión</h3>
+          <p>No declara el permiso de internet, así que el sistema operativo le impide abrir cualquier conexión. No existe un servidor que reciba tus ventas.</p>
+        </article>
+      </div>
+
+      <div class="privacy">
+        <div class="privacy__copy reveal">
+          <p class="eyebrow">El único permiso sensible</p>
+          <h2>De las notificaciones solo saca el monto y lo canta</h2>
+          <p class="lead">
+            Android le da acceso a las notificaciones para que sepa cuándo entra un pago.
+            Ese acceso tiene un solo uso: leer el valor y decirlo en voz alta.
+          </p>
+
+          <div class="callout">
+            <span class="callout__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            </span>
+            <div>
+              <h3>Lo que hace con una notificación</h3>
+              <p>La lee, extrae el monto y la billetera, la canta y la suma al cuadre del día. Nada más.</p>
+            </div>
           </div>
-          <pre><code><span class="c">&lt;!-- Cero permiso de internet: app 100% offline --&gt;</span>
+
+          <ul class="checks">
+            <li>Solo reacciona a notificaciones de Nequi, Daviplata, Bancolombia y SMS bancarios.</li>
+            <li>No abre tus apps ni tus conversaciones: lee el texto que Android ya muestra.</li>
+            <li>No pide ubicación, cámara, contactos ni almacenamiento.</li>
+            <li>No manda nada a ningún servidor: el sistema le bloquea la red de raíz.</li>
+          </ul>
+
+          <a class="link-arrow" href="https://github.com/Macorreag/CantaPagos/blob/main/app/src/main/AndroidManifest.xml">
+            Ver el AndroidManifest.xml
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="privacy__proof reveal">
+          <div class="code">
+            <div class="code__bar">
+              <span>AndroidManifest.xml</span>
+              <span class="code__ok">sin INTERNET</span>
+            </div>
+            <pre><code><span class="c">&lt;!-- Cero permiso de internet: app 100% offline --&gt;</span>
 &lt;uses-permission android:name=<span class="s">"android.permission.VIBRATE"</span> /&gt;
 &lt;uses-permission android:name=<span class="s">"android.permission.POST_NOTIFICATIONS"</span> /&gt;
 &lt;uses-permission android:name=<span class="s">"android.permission.MODIFY_AUDIO_SETTINGS"</span> /&gt;
 &lt;uses-permission android:name=<span class="s">"android.permission.RECEIVE_BOOT_COMPLETED"</span> /&gt;
 
 <span class="c">&lt;!-- y nada más. Ni una sola conexión de red. --&gt;</span></code></pre>
-        </div>
-        <div class="proof__stat">
-          <span class="proof__num">0</span>
-          <span class="proof__txt">permisos de red en toda la app</span>
+          </div>
+          <div class="proof__stat">
+            <span class="proof__num">0</span>
+            <span class="proof__txt">permisos de red en toda la app</span>
+          </div>
+          <p class="proof__note">
+            Si mañana alguien quisiera añadir publicidad o enviar datos, tendría que agregar
+            el permiso de internet al manifiesto: un cambio visible en el repositorio.
+          </p>
         </div>
       </div>
     </div>
@@ -449,7 +515,7 @@
       <div class="faq">
         <details class="reveal">
           <summary>¿Necesita internet?</summary>
-          <p>No. La app no tiene el permiso <code>INTERNET</code> en su manifiesto, así que ni siquiera podría conectarse. Funciona en modo avión.</p>
+          <p>No, y no podría aunque quisiera: la app no declara el permiso <code>INTERNET</code> en su manifiesto, así que el sistema operativo le bloquea cualquier conexión. Funciona en modo avión.</p>
         </details>
         <details class="reveal">
           <summary>¿Con qué billeteras funciona?</summary>
@@ -464,8 +530,12 @@
           <p>Hoy se distribuye como APK firmado desde este repositorio. Publicar en Play implica un proceso de revisión aparte; mientras tanto, cada cambio en <code>main</code> genera un APK nuevo automáticamente.</p>
         </details>
         <details class="reveal">
-          <summary>¿Es gratis?</summary>
-          <p>Sí. El código es abierto y el APK es libre de descargar. No hay suscripción, no hay versión “premium” y no hay anuncios.</p>
+          <summary>¿Es gratis? ¿Tiene anuncios?</summary>
+          <p>Es gratis y no tiene publicidad: ni banners, ni videos, ni SDK de anuncios. No hay suscripción, ni versión “premium”, ni cobro por el cuadre del día. El código es abierto y el APK es libre de descargar.</p>
+        </details>
+        <details class="reveal">
+          <summary>¿Qué permisos pide la app?</summary>
+          <p>Cuatro, ninguno sensible: vibración, notificaciones, ajustes de audio y arranque automático. Aparte, Android pide activar el <em>acceso a notificaciones</em>, que CantaPagos usa solo para leer el monto de un pago y cantarlo. No pide ubicación, cámara, contactos ni almacenamiento, y no tiene permiso de internet.</p>
         </details>
         <details class="reveal">
           <summary>Instalé y no suena. ¿Qué reviso?</summary>
@@ -491,7 +561,7 @@
         </a>
         <a class="btn btn--ghost btn--lg" href="https://github.com/Macorreag/CantaPagos/releases">Ver todas las versiones</a>
       </div>
-      <p class="cta-final__fine">Si el enlace falla, entra a Releases y descarga el APK más reciente.</p>
+      <p class="cta-final__fine">Gratis, sin anuncios y sin permiso de internet. Si el enlace falla, entra a Releases y descarga el APK más reciente.</p>
     </div>
   </section>
 </main>

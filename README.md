@@ -6,6 +6,10 @@ CantaPagos convierte un Android en un altavoz de cobros: lee las notificaciones 
 Nequi, Daviplata y Bancolombia, y anuncia el monto en voz alta con una campanita de
 caja registradora. Funciona **100% offline**.
 
+- **Gratis**: sin suscripción, sin versión premium, sin cobros.
+- **Sin publicidad**: no hay banners, ni videos, ni SDK de anuncios.
+- **Segura por diseño**: no declara el permiso de internet, así que el sistema le impide conectarse.
+
 [![APK](https://github.com/Macorreag/CantaPagos/actions/workflows/apk.yml/badge.svg)](https://github.com/Macorreag/CantaPagos/actions/workflows/apk.yml)
 
 ### [⬇ Descargar el APK](https://github.com/Macorreag/CantaPagos/releases/latest/download/CantaPagos.apk)
@@ -28,6 +32,9 @@ Sitio del proyecto: <https://macorreag.github.io/CantaPagos/>
 El `AndroidManifest.xml` **no declara `android.permission.INTERNET`**: el sistema
 operativo le impide a la app abrir cualquier conexión. Los pagos se guardan en una
 base de datos Room local y la voz se sintetiza en el dispositivo.
+
+El **acceso a notificaciones** tiene un solo uso: leer el monto de un pago y cantarlo.
+La app no pide ubicación, cámara, contactos ni almacenamiento.
 
 ## Instalar
 
