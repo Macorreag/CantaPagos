@@ -13,7 +13,8 @@ android {
   compileSdk { version = release(36) { minorApiLevel = 1 } }
 
   defaultConfig {
-    applicationId = "com.aistudio.cantapagos.klvwpm"
+    // Identidad permanente en Google Play. No se puede cambiar después de la primera subida.
+    applicationId = "co.macorreag.cantapagos"
     minSdk = 24
     targetSdk = 36
     // Play exige un versionCode distinto y mayor en cada subida. CI lo inyecta
