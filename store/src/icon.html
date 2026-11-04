@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 512px; height: 512px; overflow: hidden; }
+</style>
+</head>
+<body>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Contenido del adaptive icon, escalado y centrado (zona segura ~66%) -->
+  <g transform="translate(86 86) scale(3.148)">
+    <path d="M32,45 L44,45 L58,33 L58,75 L44,63 L32,63 Z" fill="#10B981"/>
+    <path d="M58,33 L62,33 C63,33 64,34 64,35 L64,73 C64,74 63,75 62,75 L58,75 Z" fill="#34D399"/>
+    <path d="M70,44 C74,49 74,59 70,64" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M78,38 C85,46 85,62 78,70" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <circle cx="40" cy="60" r="12" fill="#F59E0B"/>
+    <circle cx="40" cy="60" r="9.5" fill="#FBBF24"/>
+    <path d="M40,53 L40,67 M42.5,56 C41.5,54.8 38.5,54.8 38.5,57 C38.5,59.5 42,59.5 42,62 C42,64.5 39,64.5 37.5,63.2"
+          stroke="#78350F" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>
+</body>
+</html>

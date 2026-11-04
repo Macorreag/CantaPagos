@@ -32,6 +32,8 @@ concurrency:
 env:
   GRADLE_VERSION: '9.3.1'
   ASSET_NAME: CantaPagos.apk
+  AAB_NAME: CantaPagos.aab
+  VERSION_NAME: '1.0'
 
 jobs:
   build:
@@ -83,9 +85,27 @@ jobs:
           KEYSTORE_PATH: ${{ runner.temp }}/signing/upload.jks
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          VERSION_CODE: ${{ github.run_number }}
+          VERSION_NAME: ${{ env.VERSION_NAME }}
         run: |
           set -euo pipefail
           gradle :app:assembleRelease \
+            --no-daemon \
+            --stacktrace \
+            -Dorg.gradle.parallel=true
+
+      # Play Store solo acepta AAB. Se firma con la misma upload key y el mismo
+      # versionCode que el APK, para que ambos artefactos sean la misma versión.
+      - name: Compilar AAB para Play
+        env:
+          KEYSTORE_PATH: ${{ runner.temp }}/signing/upload.jks
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          VERSION_CODE: ${{ github.run_number }}
+          VERSION_NAME: ${{ env.VERSION_NAME }}
+        run: |
+          set -euo pipefail
+          gradle :app:bundleRelease \
             --no-daemon \
             --stacktrace \
             -Dorg.gradle.parallel=true
@@ -99,7 +119,12 @@ jobs:
 
           mkdir -p dist
           cp "$SRC" "dist/$ASSET_NAME"
-          sha256sum "dist/$ASSET_NAME" | tee dist/SHA256SUMS.txt
+
+          AAB="app/build/outputs/bundle/release/app-release.aab"
+          test -f "$AAB" || { echo "::error::No se generó $AAB"; find app/build/outputs/bundle -name '*.aab' || true; exit 1; }
+          cp "$AAB" "dist/$AAB_NAME"
+
+          sha256sum "dist/$ASSET_NAME" "dist/$AAB_NAME" | tee dist/SHA256SUMS.txt
 
           APKSIGNER="$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -1)"
           if [ -n "$APKSIGNER" ]; then
@@ -109,6 +134,7 @@ jobs:
           SIZE=$(du -h "dist/$ASSET_NAME" | cut -f1)
           echo "size=$SIZE" >> "$GITHUB_OUTPUT"
           echo "sha=$(sha256sum "dist/$ASSET_NAME" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+          echo "aabSize=$(du -h "dist/$AAB_NAME" | cut -f1)" >> "$GITHUB_OUTPUT"
 
       - name: Subir artifact
         uses: actions/upload-artifact@v4
@@ -158,11 +184,12 @@ jobs:
       - name: Resumen
         run: |
           {
-            echo "### APK listo"
+            echo "### Artefactos listos"
             echo
             echo "| | |"
             echo "|---|---|"
-            echo "| Archivo | \`$ASSET_NAME\` |"
-            echo "| Tamaño | ${{ steps.apk.outputs.size }} |"
-            echo "| SHA-256 | \`${{ steps.apk.outputs.sha }}\` |"
+            echo "| APK | \`$ASSET_NAME\` (${{ steps.apk.outputs.size }}) |"
+            echo "| AAB (Play) | \`$AAB_NAME\` (${{ steps.apk.outputs.aabSize }}) |"
+            echo "| versionCode | \`${{ github.run_number }}\` |"
+            echo "| SHA-256 APK | \`${{ steps.apk.outputs.sha }}\` |"
           } >> "$GITHUB_STEP_SUMMARY"

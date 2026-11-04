@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad · CantaPagos</title>
+<meta name="description" content="CantaPagos no recoge ni transmite datos: no tiene permiso de internet. Qué procesa, qué permisos pide y cuánto tiempo guarda la información.">
+<meta name="theme-color" content="#070B14">
+<link rel="canonical" href="https://macorreag.github.io/CantaPagos/privacidad.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav is-stuck">
+  <div class="wrap nav__inner">
+    <a class="brand" href="/CantaPagos/" aria-label="CantaPagos, inicio">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
+      </span>
+      <span class="brand__text">CantaPagos</span>
+    </a>
+    <a class="btn btn--ghost btn--sm" href="/CantaPagos/">Volver al inicio</a>
+  </div>
+</header>
+
+<main class="wrap legal">
+  <h1>Política de privacidad</h1>
+  <p class="legal__date">Última actualización: 4 de noviembre de 2026</p>
+
+  <div class="legal__box">
+    <p><strong>En una frase:</strong> CantaPagos no recoge, no transmite y no comparte datos.
+    La app no declara el permiso de internet, así que el sistema operativo le impide abrir
+    cualquier conexión.</p>
+  </div>
+
+  <h2>1. Quién está detrás</h2>
+  <p>CantaPagos es una aplicación desarrollada por Miller Correa, desarrollador independiente
+  en Colombia. Es gratuita, no tiene publicidad y su código es abierto en
+  <a href="https://github.com/Macorreag/CantaPagos">github.com/Macorreag/CantaPagos</a>.</p>
+
+  <h2>2. Qué información procesa la app</h2>
+  <p>Para poder cantar un pago, CantaPagos necesita leer la notificación que la billetera o el
+  banco publica en el teléfono. De esa notificación extrae únicamente:</p>
+  <ul>
+    <li>El <strong>monto</strong> del pago.</li>
+    <li>La <strong>billetera</strong> de origen (Nequi, Daviplata, Bancolombia o SMS bancario).</li>
+    <li>La <strong>fecha y hora</strong> del pago.</li>
+  </ul>
+  <p>Si el texto de la notificación incluye el nombre de una persona, la app lo reemplaza antes
+  de guardar nada. Toda esta información queda en una base de datos local dentro del teléfono.</p>
+
+  <h2>3. Qué NO hace</h2>
+  <ul>
+    <li>No se conecta a internet: el manifiesto de la app no incluye el permiso <code>INTERNET</code>.</li>
+    <li>No crea cuentas ni pide registro, correo o teléfono.</li>
+    <li>No usa analítica, publicidad ni rastreadores de ningún tipo.</li>
+    <li>No accede a contactos, ubicación, cámara, fotos ni almacenamiento.</li>
+    <li>No abre tus aplicaciones ni tus conversaciones: solo lee el texto que Android ya muestra
+      en la notificación.</li>
+  </ul>
+
+  <h2>4. Permisos que solicita</h2>
+  <p>La app declara cuatro permisos en su manifiesto, ninguno sensible: vibración,
+  notificaciones, ajustes de audio y arranque automático.</p>
+  <p>Aparte de eso, Android pide activar el <strong>acceso a notificaciones</strong>, que es un
+  permiso especial que solo tú puedes conceder desde los ajustes del sistema. Su único uso es
+  detectar cuándo entra un pago y anunciarlo en voz alta. Puedes revocarlo en cualquier momento
+  y la app deja de funcionar sin afectar el resto del teléfono.</p>
+
+  <h2>5. Cuánto tiempo se guarda</h2>
+  <p>Los pagos permanecen en la base de datos local hasta que desinstalas la app o borras sus
+  datos desde los ajustes de Android. La opción “Cerrar caja” reinicia el contador del turno,
+  pero conserva el historial de pagos anteriores.</p>
+
+  <h2>6. Terceros</h2>
+  <p>No hay terceros. No se envían datos a ningún servidor, proveedor, SDK de análisis o red
+  publicitaria, porque la app no puede establecer conexiones de red.</p>
+
+  <h2>7. Menores de edad</h2>
+  <p>CantaPagos es una herramienta de trabajo para comerciantes y no está dirigida a menores
+  de 18 años.</p>
+
+  <h2>8. Tus derechos</h2>
+  <p>Como no hay datos almacenados fuera de tu teléfono, no existe información que podamos
+  consultar, corregir o eliminar de nuestra parte: todo se borra desinstalando la app.
+  Si tienes dudas sobre este documento, escribe a
+  <a href="mailto:macorreag@unal.edu.co">macorreag@unal.edu.co</a> o abre un
+  <a href="https://github.com/Macorreag/CantaPagos/issues">issue en el repositorio</a>.</p>
+
+  <h2>9. Cambios en esta política</h2>
+  <p>Si la app cambia la forma en que trata la información, esta página se actualizará y la
+  fecha del encabezado cambiará. La versión vigente es siempre la publicada en esta dirección.</p>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__legal">
+    <p>© <span id="year">2026</span> Miller Correa. CantaPagos no está afiliado a Nequi, Daviplata ni Bancolombia.</p>
+    <p><a href="/CantaPagos/">Inicio</a> · <a href="https://github.com/Macorreag/CantaPagos">Repositorio</a></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
